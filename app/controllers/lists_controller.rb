@@ -3,10 +3,11 @@ class ListsController < ApplicationController
 
   def index
     @lists = List.all
+    @bookmark = Bookmark.new
   end
 
   def show
-    # achar uma forma de enviar uma instancia de Movie para show.view
+    # achar uma forma de enviar uma instancia de Movie para pagina
   end
 
   def new
@@ -20,6 +21,7 @@ class ListsController < ApplicationController
     else
       render :new
     end
+
   end
 
   private
@@ -31,5 +33,4 @@ class ListsController < ApplicationController
   def list_params
     params.require(:list).permit(:name)
   end
-
 end
