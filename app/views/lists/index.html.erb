@@ -1,1 +1,8 @@
-index list
+<div class="container">
+  <%= link_to "Add new list", new_list_path, class: "btn btn-success col-4 text-center" %>
+  <div class="col-10 m-auto text-center">
+    <% @lists.each do |list| %>
+    <%= link_to list.name, list_path(list[:id]) %>
+    <% end %>
+  </div>
+</div>

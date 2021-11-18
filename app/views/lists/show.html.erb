@@ -1,1 +1,8 @@
-show list
+<%= @list.name %>
+<ul>
+<% @list.bookmarks.each do |bookmark|%>
+  <li>
+    <h2><%= bookmark.movie_id %></h2>
+  </li>
+<% end %>
+</ul>

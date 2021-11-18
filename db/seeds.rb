@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Movie.destroy_all
+List.destroy_all
+Bookmark.destroy_all
 
 require 'json'
 require 'open-uri'
@@ -16,6 +18,7 @@ res = URI.open(url)
 json = JSON.parse(res.read)
 
 movies = json['results']
+lists = ["Drama", "Comedy", "Action", "Thriller", "Documentary"]
 
 movies.each do |movie|
   Movie.create!(
@@ -23,5 +26,19 @@ movies.each do |movie|
     overview: movie['overview'],
     poster_url: "https://image.tmdb.org/t/p/original#{movie['poster_path']}",
     rating: movie['vote_average']
+  )
+end
+
+lists.each do |list|
+  List.create!(
+    name: list
+  )
+end
+
+10.times do
+  Bookmark.create!(
+    movie_id: rand(Movie.first.id...Movie.last.id),
+    list_id: rand(List.first.id...List.last.id),
+    comment: "This is a comment!"
   )
 end
