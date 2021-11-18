@@ -6,6 +6,7 @@ class ListsController < ApplicationController
   end
 
   def show
+    # achar uma forma de enviar uma instancia de Movie para show.view
   end
 
   def new
