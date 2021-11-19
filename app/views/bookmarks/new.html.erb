@@ -1,8 +1,8 @@
   <div class="row justify-content-center my-3">
     <div class="col-4">
       <%= simple_form_for @bookmark do |f| %>
-        <%= f.number_field :movie_id %>
-         <%= f.number_field :list_id %>
+        <%= f.association :movie, as: :radio_buttons %>
+         <%= f.association :list, as: :radio_buttons %>
           <%= f.input :comment %>
         <%= f.submit 'Add', class: 'btn btn-success' %>
       <% end %>

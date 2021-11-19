@@ -1,4 +1,4 @@
-<%= @list.name %>
+<h1> <%= @list.name %> </h2>
 
 <ul>
   <% @list.bookmarks.each do |bookmark|%>
@@ -16,3 +16,6 @@
   </li>
   <% end %>
 </ul>
+
+<h3> <%= link_to "Add new bookmark", new_list_bookmark_path(@list[:id]) %>
+<h3> <%= link_to 'Back', lists_path %> </h3>
