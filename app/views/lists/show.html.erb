@@ -1,12 +1,18 @@
 <%= @list.name %>
+
 <ul>
-<% @list.bookmarks.each do |bookmark|%>
+  <% @list.bookmarks.each do |bookmark|%>
   <li>
-    <h2><%= bookmark.movie_id %></h2>
+  <% @movies.each do |movie| %>
+  <% if bookmark.movie_id == movie.id  %>
+    <h2> <%= movie.title %> </h2>
+    <h3> <%= movie.overview %> </h3>
+  <% end %>
+  <% end %>
     <%= link_to "delete",
             bookmark_path(bookmark[:id]),
             method: :delete,
             data: { confirm: "Are you sure?" } %>
   </li>
-<% end %>
+  <% end %>
 </ul>

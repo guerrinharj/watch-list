@@ -3,11 +3,11 @@ class ListsController < ApplicationController
 
   def index
     @lists = List.all
-    @bookmark = Bookmark.new
+    # achar uma forma de chamar bookmarks/new
   end
 
   def show
-    # achar uma forma de enviar uma instancia de Movie para pagina
+    @movies = Movie.all
   end
 
   def new

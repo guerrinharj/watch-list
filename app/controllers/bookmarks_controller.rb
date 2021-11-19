@@ -1,10 +1,11 @@
 class BookmarksController < ApplicationController
 
   def new
+    @bookmark = Bookmark.new
   end
 
   def create
-    @bookmark.new(bookmark_params)
+    @bookmark = Bookmark.new(bookmark_params)
   end
 
   def destroy

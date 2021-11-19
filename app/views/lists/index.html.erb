@@ -5,14 +5,4 @@
     <%= link_to list.name, list_path(list[:id]) %>
     <% end %>
   </div>
-  <div class="row justify-content-center my-3">
-    <div class="col-4">
-      <%= simple_form_for @bookmark do |f| %>
-        <%= f.number_field :movie_id %>
-         <%= f.number_field :list_id %>
-          <%= f.input :comment %>
-        <%= f.submit 'Add', class: 'btn btn-success' %>
-      <% end %>
-    </div>
-  </div>
 </div>
