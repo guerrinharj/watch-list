@@ -2,8 +2,9 @@
     <div class="col-4">
       <%= simple_form_for @bookmark do |f| %>
         <%= f.association :movie, as: :radio_buttons %>
-         <%= f.association :list, as: :radio_buttons %>
-          <%= f.input :comment %>
+        <%= f.association :list, as: :radio_buttons %>
+        <!--preciso enviar a route da minha list-->
+        <%= f.input :comment %>
         <%= f.submit 'Add', class: 'btn btn-success' %>
       <% end %>
     </div>
